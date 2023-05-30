@@ -1,0 +1,26 @@
+.edit-profile__container {
+  width: 430px;
+  height: 330px;
+  color: #000;
+  background-color: #FFF;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+
+}
+
+.edit-form{
+    
+}
+
+.edit-input{
+    width: 358px;
+    padding: 13px;
+    margin-bottom: 48px;
+}
+
+.edit-submit{
+    width: 358px;
+    height: 50px;
+    background: #000;
+    color: #FFF;
+}
