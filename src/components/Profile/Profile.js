@@ -12,12 +12,25 @@ const Profile = () => {
     setEditProfileVisible(true);
   };
 
+  const saveNameDataHandler = (enteredNameData) => {
+    const nameData = {
+      ...enteredNameData
+    }
+  }
+
+  const saveSubtitleDataHandler = (enteredSubtitleData) =>{
+    const subtitleData = {
+      ...enteredSubtitleData
+    }
+  }
+
+
   return (
     <div className="profile-container">
       <img src={profileImage} alt="" className="profile-image"></img>
       <div className="information-content">
-        <h1 className="profile-name">Joao Claudio</h1>
-        <h4 className="profile-explore">Explorar</h4>
+        <h1 className="profile-name" props={saveNameDataHandler}>Joao Claudio</h1>
+        <h4 className="profile-explore" props={saveSubtitleDataHandler}>Explorar</h4>
       </div>
       <button className="edit-square" onClick={visibleClick}>
         <img src={editImage} alt="Button Image" className="edit-image"></img>
