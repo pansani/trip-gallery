@@ -1,19 +1,18 @@
 import React, { useState } from "react";
-
 import "./EditProfile.css";
 
 const EditProfile = (props) => {
   const [enteredTitle, setEnteredTitle] = useState("");
-  const [enteredSubtile, setEnteredSubtitle] = useState("");
-  const [isContainerVisible, setIsContainerVisible] = useState(true);
+  const [enteredSubtitle, setEnteredSubtitle] = useState("");
 
   const closeClick = () => {
-    setIsContainerVisible(false);
+    props.onClose();
   };
 
   const titleChangeHandler = (event) => {
     setEnteredTitle(event.target.value);
   };
+
   const subtitleChangeHandler = (event) => {
     setEnteredSubtitle(event.target.value);
   };
@@ -26,7 +25,7 @@ const EditProfile = (props) => {
     };
 
     const profileSubtitle = {
-      subtitle: enteredSubtile,
+      subtitle: enteredSubtitle,
     };
 
     props.saveNameData(profileName);
@@ -34,42 +33,38 @@ const EditProfile = (props) => {
 
     setEnteredTitle("");
     setEnteredSubtitle("");
+
+    closeClick();
   };
 
   return (
-    <>
-      {isContainerVisible && (
-        <div className="profile-container">
-          <button type="button" onClick={closeClick}>
-            <h1 className="close__edit-profile">+</h1>
+    <div className="edit-profile-container">
+      <button type="button" className="close-button" onClick={closeClick}>
+        X
+      </button>
+      <div className="edit-profile__content">
+        <h1 className="edit-name">Editar Perfil</h1>
+        <form className="edit-form" onSubmit={submitHandler}>
+          <input
+            type="text"
+            placeholder="Nome"
+            className="edit-input"
+            value={enteredTitle}
+            onChange={titleChangeHandler}
+          />
+          <input
+            type="text"
+            placeholder="Subtitulo"
+            className="edit-input"
+            value={enteredSubtitle}
+            onChange={subtitleChangeHandler}
+          />
+          <button type="submit" className="edit-submit">
+            Salvar
           </button>
-          <div className="edit-profile__container">
-            <h1 className="edit-name">Editar Perfil</h1>
-            <form className="edit-form" onSubmit={submitHandler}>
-              <input
-                type="text"
-                placeholder="Nome"
-                className="edit-input"
-                value={enteredTitle}
-                onChange={titleChangeHandler}
-              ></input>
-              <input
-                type="text"
-                placeholder="Subtitulo"
-                className="edit-input"
-                value={enteredSubtile}
-                onChange={subtitleChangeHandler}
-              ></input>
-              <button type="submit" className="edit-submit">
-                {" "}
-                Salvar
-              </button>
-            </form>
-          </div>
-          <div className="overlay"></div>
-        </div>
-      )}
-    </>
+        </form>
+      </div>
+    </div>
   );
 };
 

@@ -4,26 +4,43 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: #000000;
-  opacity: 0.5;
-  z-index: 3;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.edit-profile__container {
-  width: 430px;
-  height: 330px;
-  color: #000;
-  background-color: #fff;
-  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: absolute;
+.edit-profile-wrapper {
+  position: relative;
+  z-index: 1000;
+}
+
+.edit-profile-container {
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 5;
+  z-index: 1000;
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.close-button {
+  position: absolute;
+  top: 3px;
+  right: 0px;
+  width: 40px;
+  height: 40px;
+  color: black;
+  border: none;
+  border-radius: 50%;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 }
 
 .edit-form {
@@ -50,14 +67,3 @@
   border-radius: 2px;
 }
 
-.close__edit-profile {
-  position: absolute;
-  height: 40px;
-  top: 17%;
-  left: 63%;
-  right: 30%;
-  color: #ffffff;
-  transform: rotate(-45deg);
-  z-index: 6;
-  font-weight: 500;
-}
