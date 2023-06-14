@@ -1,0 +1,50 @@
+.edit-trip-container{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.close-button__trip{
+    position: absolute;
+    top: 3px;
+    right: 0px;
+    width: 40px;
+    height: 40px;
+    color: black;
+    border: none;
+    border-radius: 50%;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.edit-form__trip {
+    display: flex;
+    flex-direction: column;
+}
+
+.edit-input__trip {
+    width: 358px;
+    padding: 13px;
+    margin-bottom: 48px;
+    border: none;
+    border-bottom: 1px solid black;
+    outline: none;
+    padding-left: 0;
+    padding-bottom: 5px;
+}
+
+.edit-submit__trip {
+    width: 358px;
+    height: 50px;
+    background: #000;
+    color: #fff;
+    border-radius: 2px;
+  }

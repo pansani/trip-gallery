@@ -42,28 +42,28 @@ const EditProfile = (props) => {
       <button type="button" className="close-button" onClick={closeClick}>
         X
       </button>
-      <div className="edit-profile__content">
-        <h1 className="edit-name">Editar Perfil</h1>
-        <form className="edit-form" onSubmit={submitHandler}>
-          <input
-            type="text"
-            placeholder="Nome"
-            className="edit-input"
-            value={enteredTitle}
-            onChange={titleChangeHandler}
-          />
-          <input
-            type="text"
-            placeholder="Subtitulo"
-            className="edit-input"
-            value={enteredSubtitle}
-            onChange={subtitleChangeHandler}
-          />
-          <button type="submit" className="edit-submit">
-            Salvar
-          </button>
-        </form>
-      </div>
+      <h1>Editar Perfil</h1>
+      <form className="edit-form" onSubmit={submitHandler}>
+        <input
+          type="text"
+          placeholder="Nome"
+          className="edit-input"
+          value={enteredTitle}
+          onChange={titleChangeHandler}
+          maxLength={20}
+        />
+        <input
+          type="text"
+          placeholder="Subtitulo"
+          className="edit-input"
+          value={enteredSubtitle}
+          onChange={subtitleChangeHandler}
+          maxLength={20}
+        />
+        <button type="submit" className="edit-submit">
+          Salvar
+        </button>
+      </form>
     </div>
   );
 };

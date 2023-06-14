@@ -7,7 +7,7 @@ import EditProfile from "./EditProfile";
 const Profile = () => {
   const [isEditProfileVisible, setEditProfileVisible] = useState(false);
   const [profileName, setProfileName] = useState("Your Name");
-  const [profileSubtitle, setProfileSubtitle] = useState("Sea Explorer");
+  const [profileSubtitle, setProfileSubtitle] = useState("Your traveler type");
 
   const visibleClick = () => {
     setEditProfileVisible(true);
