@@ -2,16 +2,12 @@ import React, { useState } from "react";
 
 import "./EditTrip.css";
 
-const EditTrip = (props) => {
+const EditTrip = ({onSubmit, onClose}) => {
   const [enteredTripName, setEnteredTripName] = useState("");
   const [enteredTripDate, setEnteredTripDate] = useState("");
   const [enteredTripDescription, setEnteredTripDescription] = useState(
     ""
   );
-
-  const closeTripClick = () => {
-    props.onCloseTrip();
-  };
 
   const nameChangeHandler = (event) => {
     setEnteredTripName(event.target.value);
@@ -28,34 +24,15 @@ const EditTrip = (props) => {
   const submitTripHandler = (event) => {
     event.preventDefault();
 
-    const tripName = {
-      name: enteredTripName,
-    };
-
-    const tripDate = {
-      date: enteredTripDate,
-    };
-
-    const tripDescription = {
-      description: enteredTripDescription,
-    };
-
-    props.saveTripNameData(tripName);
-    props.saveTripDateData(tripDate);
-    props.saveTripDescriptionData(tripDescription);
-
-    setEnteredTripName("");
-    setEnteredTripDate("");
-    setEnteredTripDescription("");
-
-    closeTripClick();
+    onSubmit({date: enteredTripDate, name: enteredTripName, description: enteredTripDescription})
   };
+
   return (
     <div className="edit-trip-container">
       <button
         type="button"
         className="close-button__trip"
-        onClick={closeTripClick}
+        onClick={() => onClose()}
       >
         X
       </button>
