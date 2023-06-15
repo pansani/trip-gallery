@@ -3,7 +3,7 @@ import Card from "./components/UI/Card";
 import Profile from "./components/Profile/Profile";
 import TripCard from "./components/Trips/TripCard";
 import React, { useState } from "react";
-import EditTrip from "./components/Trips/EditTrip";
+import AddTrip from "./components/Trips/AddTrip";
 
 function App() {
   const [trips, setTrips] = useState([{
@@ -44,7 +44,7 @@ function App() {
       })}
       </div>
       {addTripDialogVisible && (
-        <EditTrip
+        <AddTrip
           onSubmit={newTripSubmitHandler}
           onClose={() => setAddTripDialogVisible(false)}
         />

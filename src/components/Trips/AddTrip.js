@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
-import "./EditTrip.css";
+import "./AddTrip.css";
 
-const EditTrip = ({onSubmit, onClose}) => {
+const AddTrip = ({onSubmit, onClose}) => {
   const [enteredTripName, setEnteredTripName] = useState("");
   const [enteredTripDate, setEnteredTripDate] = useState("");
   const [enteredTripDescription, setEnteredTripDescription] = useState(
@@ -64,4 +64,4 @@ const EditTrip = ({onSubmit, onClose}) => {
   );
 };
 
-export default EditTrip;
+export default AddTrip;
