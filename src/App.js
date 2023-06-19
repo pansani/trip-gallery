@@ -4,6 +4,7 @@ import Profile from "./components/Profile/Profile";
 import TripCard from "./components/Trips/TripCard";
 import React, { useState } from "react";
 import AddTrip from "./components/Trips/AddTrip";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   const [trips, setTrips] = useState([{
@@ -49,6 +50,7 @@ function App() {
           onClose={() => setAddTripDialogVisible(false)}
         />
       )}
+      <Footer/>
     </Card>
   );
 }
